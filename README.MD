@@ -35,6 +35,9 @@ Appwrite, Node, Express, Materialize, EJS, Vite
   - Assignments page: Showing all assignments from the currently due ones to the old ones. Column for future assignments separately? I want the ones they're working on to be easily accessible at the top
   - Classes page: Show all classes
 - ***It was pretty easy to get the next classes on the homepage, but I am struggling with filtering the assignments by a string due date to get only the assignments due for the upcoming class. I may need to input all of the assignments with the exact same class names they have in the classes database. Continuing working on this when I get back to it.
+- I woke up today and immediately thought of the solution. Instead of my previous method, I am finding the first assignment that is not completed and is not and then displaying all homework due that same class.
+
+- The next thing I want to work on is rollover assignments. I am going to add a number to each assignment within the same class due date in the database. It will make it easier to compare numbers to decide which assignments are rollover and set it.
 
 ## Optimizations
 - Networking page to track your coffee chats

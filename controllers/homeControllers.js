@@ -17,12 +17,20 @@ function getUpcomingClasses(classes) {
     ];
 };
 
-// *** GET THE NEXT DUE ASSIGNMENTS BASED ON CLASS NAME
-function getdueAssignments(assignments, nextClasses) {
-    // Get array of class names
-    const nextClassNames = nextClasses.map(c => c['class-number'].trim());
+function getdueAssignments(assignments) {
+    let dueAssignments = [];
+    // find first assignment that has not been completed and is not rollover
+    let i = 0;
+    while(dueAssignments.length === 0) {
+        if(assignments[i]['completed'] === 'false' && !assignments[i]['rollover']) {
+            dueAssignments.push(assignments[i]);
+        };
+        i++;
+    };
 
-    // filter assignments to ones that match at least one of the nextClassNames
+    // filter assignments for all assignments with that same class due date 
+    dueAssignments = assignments.filter(a => a['due'] === dueAssignments[0]['due'])
+    return dueAssignments
 };
 
 async function getIndex(req, res) {
@@ -31,11 +39,11 @@ async function getIndex(req, res) {
         const classes = await read(process.env.CLASSES_COLLECTION_ID);
 
         const nextClasses = getUpcomingClasses(classes);
-        const dueAssignments = getdueAssignments(assignments, nextClasses);
-
-        console.log(dueAssignments)
+        const dueAssignments = getdueAssignments(assignments);
+        
         res.render('index', {
-            classes: nextClasses
+            classes: nextClasses,
+             assignments: dueAssignments
         });
     } catch(err) {
         console.error(err);
@@ -48,7 +56,7 @@ async function getAllData(req, res) {
         const assignments = await read(process.env.ASSIGNMENTS_COLLECTION_ID);
         const classes = await read(process.env.CLASSES_COLLECTION_ID);
     
-        res.render('allData', {
+        res.render('assignments', {
             assignments,
             classes
         });
@@ -58,4 +66,4 @@ async function getAllData(req, res) {
     };
 };
 
-export { getIndex };
+export { getIndex, getAllData };

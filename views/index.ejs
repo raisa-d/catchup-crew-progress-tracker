@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>100Devs Catchup Crew Progress Tracker</title>
+    <link rel="stylesheet" href="/style.css">
+  </head>
+  <body>
+    <header>
+      <h1>100Devs Catchup Crew Progress Tracker</h1>
+    <p>WE GO GET!</p>
+    <nav>
+      <div class="nav-wrapper indigo lighten-1">
+        <ul id="nav-mobile" class="left hide-on-med-and-down">
+          <li>
+            <a href="#">
+              Home
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              Assignments
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              Classes
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    </header>
+    <!-- Display Assignments -->
+    <table class="striped centered responsive-table">
+      <caption>Assignments</caption>
+      <thead>
+          <tr>
+              <th>Due Date</th>
+              <th>Assignment</th>
+              <th>Completed</th>
+          </tr>
+      </thead>
+      <tbody>
+          <% assignments.forEach(assignment => { %>
+              <tr>
+                  <td><%= assignment.due %></td>
+                  <td>
+                    <a href="<%= assignment.source %>" target="_blank">
+                      <%= assignment.assignment %>
+                    </a>
+                  </td>
+                  <td class="<%= assignment.completed === 'false' ? 'red lighten-3' : 'green lighten-3' %>"></td>
+              </tr>
+          <% }) %>
+      </tbody>
+  </table>
+
+  <!-- Display Classes -->
+  <table class="striped responsive-table centered">
+      <caption>Classes</caption>
+      <thead>
+          <tr>
+              <th>Class</th>
+              <th>Date Completed</th>
+          </tr>
+      </thead>
+      <tbody>
+          <% classes.forEach(c => { %>
+              <tr>
+                  <td><%= c['class-number'] %></td>
+                  <td><%= c['date-watched'] || 'TBD' %></td>
+              </tr>
+          <% }) %>
+      </tbody>
+    </table>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  </body>
+</html>

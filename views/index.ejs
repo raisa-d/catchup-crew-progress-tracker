@@ -3,12 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/style.css">
     <!-- materialize -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <!-- font awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>100Devs Catchup Crew Progress Tracker</title>
-    <link rel="stylesheet" href="/style.css">
   </head>
   <body>
     <header>
@@ -43,15 +43,15 @@
                         <%= assignment.assignment %>
                       </a>
                     </td>
-                    <td class="completed-cell pointer <%= assignment.completed === 'false' ? 'red lighten-3' : 'green lighten-3' %>">
+                    <td style="cursor:pointer;" data-id="<%= assignment.$id %>" data-completed="<%= assignment.completed %>" class="completed-cell <%= assignment.completed === 'false' ? 'red lighten-3' : 'green lighten-3' %>">
                       <span>
                         <% if(assignment.completed === 'true') { %>
-                        <i class="fa-solid fa-check fa-lg"></i>
+                          <i class="fa-solid fa-check fa-lg"></i>
                         <% } else { %>
                           <i class="fa-solid fa-x fa-lg"></i>
                         <% } %>
                       </span>
-                    </td>
+                    </td>                    
                 </tr>
             <% }) %>
         </tbody>
@@ -77,6 +77,6 @@
       </table>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="/src/main.js"></script>
+    <script type="module" src="/main.js"></script>
   </body>
 </html>

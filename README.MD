@@ -23,14 +23,17 @@ This web app is inspired by an excel spreadsheet I use to track all of my person
 - Tab/page for upcoming homework, in progress homework (this is the default tab, shows what is due by the next class you watch and rollover), and completed homework. Then there is also one where you can see it all chronologically if you want to. 
 
 ## Technologies Used
-React, TailwindCSS, DaisyUI, Appwrite, Node, Express, Vite
+Appwrite, Node, Express, Materialize, EJS, Vite
 
 ## Development Log
-Started by creating boilerplate with `npm create vite`
+- Started by creating boilerplate with `npm create vite`.
+- It took a long while to get things up and running, separate everything into MVC, and then debug from there. 
+- Now that I have the assignments and classes all displayed and added the ability to check off whether an assignment is done or not, I want to update index.ejs so that each table row for date is actually a form if it doesn't already exist
 
 ## Optimizations
 - Networking page to track your coffee chats
 - Resources tab for resources you want to add when you hear about them in class or in general. Preloaded with resources from CommunityTaught or that I have compiled.
+- Add back the authentication
 
 ## Lessons Learned
 - This is my first app I'm building using Appwrite

@@ -5,6 +5,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import { Client, Databases } from 'appwrite';
 import homeRouter from './routes/homeRoutes.js';
+import updateRouter from './routes/updateRoutes.js';
 
 // Load environment variables
 dotenv.config();
@@ -16,7 +17,8 @@ const __dirname = path.dirname(__filename);
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 // Serve static files
-app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.json());
 
 /* ===============
 CONNECT TO APPWRITE
@@ -30,7 +32,8 @@ const databases = new Databases(client);
 /* =======
 ROUTERS
 ======= */
-app.use('/', homeRouter)
+app.use('/', homeRouter);
+app.use('/update', updateRouter);
 
 /* =======
 START SERVER

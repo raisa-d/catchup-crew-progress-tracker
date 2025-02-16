@@ -1,7 +1,8 @@
-.completed {
-  background-color: rgb(117, 217, 117);
-}
+.flex-row {
+  display: flex;
+  justify-content: center;
+};
 
-.not-completed {
-  background-color: rgb(251, 121, 121);
+.pointer {
+  cursor: pointer;
 }

@@ -24,62 +24,33 @@
     </nav>
     </header>
     <div class="container">
-       <!-- Display Assignments -->
-      <table class="striped centered">
-        <caption>Assignments</caption>
-        <thead>
-            <tr>
-                <th class="bordered">Due Date</th>
-                <th class="bordered">Assignment</th>
-                <th class="bordered">Completed</th>
-            </tr>
-        </thead>
-        <tbody>
-            <% assignments.forEach(assignment => { %>
-                <tr>
-                    <td><%= assignment.due %></td>
-                    <td>
-                      <a href="<%= assignment.source %>" target="_blank">
-                        <%= assignment.assignment %>
-                      </a>
-                    </td>
-                    <td style="cursor:pointer;" data-id="<%= assignment.$id %>" data-completed="<%= assignment.completed %>" class="completed-cell <%= assignment.completed === 'false' ? 'red lighten-3' : 'green lighten-3' %>">
-                      <span>
-                        <% if(assignment.completed === 'true') { %>
-                          <i class="fa-solid fa-check fa-lg"></i>
-                        <% } else { %>
-                          <i class="fa-solid fa-x fa-lg"></i>
-                        <% } %>
-                      </span>
-                    </td>                    
-                </tr>
-            <% }) %>
-        </tbody>
-    </table>
-
-       <!-- Display Classes -->
-      <table class="striped centered">
-        <caption>Classes</caption>
-        <thead>
-            <tr>
-              <th class="bordered">Class</th>
-              <th class="bordered">Date Completed</th>
-            </tr>
-        </thead>
-        <tbody>
+      <section>
+        <h2 class="flow-text center-align">Assignments Due Next Class</h2>
+      </section>
+      <section>
+        <h2 class="flow-text center-align">Upcoming Classes</h2>
+        <table class="striped centered">
+          <thead>
+              <tr>
+                <th class="bordered">Class</th>
+                <th class="bordered">Date Completed</th>
+              </tr>
+          </thead>
+          <tbody>
             <% classes.forEach(c => { %>
-                <tr>
-                    <td><%= c['class-number'] %></td>
-                    <td data-class-id="<%= c['class-id'] %>">
-                      <form action="/update/class-date/<%= c.$id %>" method="POST" class="date-form">
-                        <input type="date" name="date-watched" value="<%= c['date-watched'] ? new Date(c['date-watched']).toISOString().split('T')[0] : '' %>" required />
-                        <button type="submit">Save</button>
-                      </form>
-                    </td>                  
-                </tr>
-            <% }) %>
-        </tbody>
-      </table>
+              <tr>
+                  <td><%= c['class-number'] %></td>
+                  <td data-class-id="<%= c['class-id'] %>" class="<%= c['date-watched'] ? 'green lighten-4' : 'red lighten-4' %>">
+                    <form action="/update/class-date/<%= c.$id %>" method="POST" class="date-form">
+                      <input type="date" name="date-watched" value="<%= c['date-watched'] ? new Date(c['date-watched']).toISOString().split('T')[0] : '' %>" required />
+                      <button type="submit">Save</button>
+                    </form>
+                  </td>                  
+              </tr>
+          <% }) %>
+          </tbody>
+        </table>
+      </section>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script type="module" src="/main.js"></script>

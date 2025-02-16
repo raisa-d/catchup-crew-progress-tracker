@@ -31,6 +31,11 @@ Appwrite, Node, Express, Materialize, EJS, Vite
 - Now that I have the assignments and classes all displayed and added the ability to check off whether an assignment is done or not, I want to update `index.ejs` so that each table row for date is actually a form if it doesn't already exist
 - I did so by making the table row a form always and pre-filling it with an existing date if there is one. This way, users can edit existing dates if they made a mistake and set new ones.
 
+- Next step: only showing the upcoming homework/class on the homepage 
+  - Assignments page: Showing all assignments from the currently due ones to the old ones. Column for future assignments separately? I want the ones they're working on to be easily accessible at the top
+  - Classes page: Show all classes
+- ***It was pretty easy to get the next classes on the homepage, but I am struggling with filtering the assignments by a string due date to get only the assignments due for the upcoming class. I may need to input all of the assignments with the exact same class names they have in the classes database. Continuing working on this when I get back to it.
+
 ## Optimizations
 - Networking page to track your coffee chats
 - Resources tab for resources you want to add when you hear about them in class or in general. Preloaded with resources from CommunityTaught or that I have compiled.

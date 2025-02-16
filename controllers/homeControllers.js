@@ -1,4 +1,4 @@
-import { read } from '../models/appwriteModel.js';
+import { read, readClasses } from '../models/appwriteModel.js';
 import dotenv from 'dotenv';
 dotenv.config();
 
@@ -36,14 +36,16 @@ function getdueAssignments(assignments) {
 async function getIndex(req, res) {
     try {
         const assignments = await read(process.env.ASSIGNMENTS_COLLECTION_ID);
-        const classes = await read(process.env.CLASSES_COLLECTION_ID);
+        const classes = await readClasses(process.env.CLASSES_COLLECTION_ID);
 
+        const classesLeft = classes.filter(c => c['date-watched'] === null).length;
         const nextClasses = getUpcomingClasses(classes);
         const dueAssignments = getdueAssignments(assignments);
         
         res.render('index', {
             classes: nextClasses,
-             assignments: dueAssignments
+             assignments: dueAssignments,
+             classesLeft: classesLeft
         });
     } catch(err) {
         console.error(err);
@@ -51,30 +53,4 @@ async function getIndex(req, res) {
     };
 }
 
-async function getAssignments(req, res) {
-    try {
-        const assignments = await read(process.env.ASSIGNMENTS_COLLECTION_ID);
-    
-        res.render('assignments', {
-            assignments
-        });
-    } catch(err) {
-        console.error(err);
-        res.send('404 Error, Could not load page');
-    };
-};
-
-async function getClasses(req, res) {
-    try {
-        const classes = await read(process.env.CLASSES_COLLECTION_ID);
-    
-        res.render('classes', {
-            classes
-        });
-    } catch(err) {
-        console.error(err);
-        res.send('404 Error, Could not load page');
-    };
-};
-
-export { getIndex, getAssignments, getClasses };
+export { getIndex };

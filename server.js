@@ -6,6 +6,8 @@ import { fileURLToPath } from 'url';
 import { Client, Databases } from 'appwrite';
 import homeRouter from './routes/homeRoutes.js';
 import updateRouter from './routes/updateRoutes.js';
+import assignmentRouter from './routes/assignmentRoutes.js';
+import classRouter from './routes/classRoutes.js';
 
 // Load environment variables
 dotenv.config();
@@ -39,6 +41,8 @@ ROUTERS
 ======= */
 app.use('/', homeRouter);
 app.use('/update', updateRouter);
+app.use('/assignments', assignmentRouter);
+app.use('/classes', classRouter);
 
 /* =======
 START SERVER

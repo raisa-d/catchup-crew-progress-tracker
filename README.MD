@@ -14,13 +14,16 @@ This web app is inspired by an excel spreadsheet I use to track all of my person
 - [Contact](#contact)
 
 ## Features
-- Stores all of the homework, due date, and assignment and shows it to you based on what class you are at
-- Mark when you completed each #100Devs class/which one you are on
-- Mark whether homework is completed or in progress
-- Section for rollover homework
-- OAuth to login
+- Stores all of the homework, due date, and assignment and shows it to you based on what class you are at ✅
+- Mark when you completed each #100Devs class/which one you are on ✅
+- Mark whether homework is completed or not ✅
+- Homeage shows upcoming homework and classes ✅
+- Section for rollover homework on homepage
+- Email/OAuth login
 - Edit the homework names if you want to describe it in different wording/provide a new link if it is broken
-- Tab/page for upcoming homework, in progress homework (this is the default tab, shows what is due by the next class you watch and rollover), and completed homework. Then there is also one where you can see it all chronologically if you want to. 
+- Assignment page to see all assignments and if they're completed ✅
+- Classes page to see all classes and when/if they were completed ✅
+- "X classes to go" on Homepage
 
 ## Technologies Used
 Appwrite, Node, Express, Materialize, EJS, Vite
@@ -37,7 +40,9 @@ Appwrite, Node, Express, Materialize, EJS, Vite
 - ***It was pretty easy to get the next classes on the homepage, but I am struggling with filtering the assignments by a string due date to get only the assignments due for the upcoming class. I may need to input all of the assignments with the exact same class names they have in the classes database. Continuing working on this when I get back to it.
 - I woke up today and immediately thought of the solution. Instead of my previous method, I am finding the first assignment that is not completed and is not and then displaying all homework due that same class.
 
-- The next thing I want to work on is rollover assignments. I am going to add a number to each assignment within the same class due date in the database. It will make it easier to compare numbers to decide which assignments are rollover and set it.
+- The next thing I want to work on is rollover assignments. 
+- I am going to add a number to each class and all the assignments due at that class. Any classes with a 0 have no homework due. It will make it easier to compare numbers to decide which assignments are upcoming, rollover and set it.
+- Update getDueAssignments() in homeControllers.js to use the order property of the next class to get the assignments due.
 
 ## Optimizations
 - Networking page to track your coffee chats

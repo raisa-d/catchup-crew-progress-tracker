@@ -35,3 +35,18 @@ export async function updateCompleted(documentId, status) {
       throw err;
   };
 };
+
+export async function updateClassDate(documentId, newDate) {
+  try {
+      const response = await databases.updateDocument(
+          process.env.DATABASE_ID,
+          process.env.CLASSES_COLLECTION_ID,
+          documentId,
+          { 'date-watched': newDate }
+      );
+      return response;
+  } catch (err) {
+      console.error(`Error updating date: ${err}`);
+      throw err;
+  };
+};

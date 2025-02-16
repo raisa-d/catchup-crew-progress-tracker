@@ -28,12 +28,15 @@ Appwrite, Node, Express, Materialize, EJS, Vite
 ## Development Log
 - Started by creating boilerplate with `npm create vite`.
 - It took a long while to get things up and running, separate everything into MVC, and then debug from there. 
-- Now that I have the assignments and classes all displayed and added the ability to check off whether an assignment is done or not, I want to update index.ejs so that each table row for date is actually a form if it doesn't already exist
+- Now that I have the assignments and classes all displayed and added the ability to check off whether an assignment is done or not, I want to update `index.ejs` so that each table row for date is actually a form if it doesn't already exist
+- I did so by making the table row a form always and pre-filling it with an existing date if there is one. This way, users can edit existing dates if they made a mistake and set new ones.
 
 ## Optimizations
 - Networking page to track your coffee chats
 - Resources tab for resources you want to add when you hear about them in class or in general. Preloaded with resources from CommunityTaught or that I have compiled.
 - Add back the authentication
+- Sort assignments by class. Once class has happened on a date, change due date from class number to the date of the class.
+- Scheduling feature so you can plan when you'll do each class
 
 ## Lessons Learned
 - This is my first app I'm building using Appwrite

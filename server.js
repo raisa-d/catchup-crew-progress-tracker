@@ -16,9 +16,6 @@ const __dirname = path.dirname(__filename);
 // Set EJS as the templating engine
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
-// Serve static files
-app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.json());
 
 /* ===============
 CONNECT TO APPWRITE
@@ -28,6 +25,14 @@ const client = new Client()
     .setProject(process.env.PROJECT_ID);
 
 const databases = new Databases(client);
+
+/* =======
+MIDDLEWARE
+======= */
+// Serve static files
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }))
 
 /* =======
 ROUTERS

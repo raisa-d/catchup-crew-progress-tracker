@@ -43,6 +43,7 @@ Appwrite, Node, Express, Materialize, EJS, Vite
 - The next thing I want to work on is rollover assignments. 
 - I am going to add a number to each class and all the assignments due at that class. Any classes with a 0 have no homework due. It will make it easier to compare numbers to decide which assignments are upcoming, rollover and set it.
 - Update getDueAssignments() in homeControllers.js to use the order property of the next class to get the assignments due.
+- Try to sort classes & assignments on Classes/Assignments page so that the classes you have watched/assignments you've completed go to the bottom of the list and next one you need to watch shows up on top.
 
 ## Optimizations
 - Networking page to track your coffee chats

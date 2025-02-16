@@ -51,13 +51,24 @@ async function getIndex(req, res) {
     };
 }
 
-async function getAllData(req, res) {
+async function getAssignments(req, res) {
     try {
         const assignments = await read(process.env.ASSIGNMENTS_COLLECTION_ID);
-        const classes = await read(process.env.CLASSES_COLLECTION_ID);
     
         res.render('assignments', {
-            assignments,
+            assignments
+        });
+    } catch(err) {
+        console.error(err);
+        res.send('404 Error, Could not load page');
+    };
+};
+
+async function getClasses(req, res) {
+    try {
+        const classes = await read(process.env.CLASSES_COLLECTION_ID);
+    
+        res.render('classes', {
             classes
         });
     } catch(err) {
@@ -66,4 +77,4 @@ async function getAllData(req, res) {
     };
 };
 
-export { getIndex, getAllData };
+export { getIndex, getAssignments, getClasses };

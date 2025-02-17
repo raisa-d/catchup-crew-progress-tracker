@@ -6,7 +6,7 @@ function getUpcomingClasses(classes) {
     // Get the last completed class
     const completedClasses = classes
     .filter(c => c['date-watched'])
-    .sort((a, b) => new Date(b['date-watched']) - new Date(a['date-watched'])); // Sort by most recent date
+    .sort((a, b) => new Date(b['date-watched']) - new Date(a['date-watched']));
 
     const lastCompletedClass = completedClasses[0];
     const lastClassIndex = classes.indexOf(lastCompletedClass);
@@ -17,20 +17,31 @@ function getUpcomingClasses(classes) {
     ];
 };
 
-function getdueAssignments(assignments) {
-    let dueAssignments = [];
-    // find first assignment that has not been completed and is not rollover
+function getDueAssignments(assignments, nextClasses) {
+    // find order number for the next class
+    let order = undefined;
     let i = 0;
-    while(dueAssignments.length === 0) {
-        if(assignments[i]['completed'] === 'false' && !assignments[i]['rollover']) {
-            dueAssignments.push(assignments[i]);
+    while(order === undefined) {
+        if(nextClasses[i]['order'] !== 0) {
+            order = nextClasses[i]['order']
         };
         i++;
     };
+    
+    // all assignments with that same order number
+    let dueAssignments = [];
+    for(const assignment of assignments) {
+        if(assignment['order'] === order) {
+            dueAssignments.push(assignment);
+        };
+    };
 
-    // filter assignments for all assignments with that same class due date 
-    dueAssignments = assignments.filter(a => a['due'] === dueAssignments[0]['due'])
-    return dueAssignments
+    // sort so that the completed assignments are last on list
+    return dueAssignments.sort((a, b) => {
+        const aCompleted = a['completed'] === 'true';
+        const bCompleted = b['completed'] === 'true';
+        return aCompleted - bCompleted;
+    });
 };
 
 async function getHome(req, res) {
@@ -40,7 +51,7 @@ async function getHome(req, res) {
 
         const classesLeft = classes.filter(c => c['date-watched'] === null).length;
         const nextClasses = getUpcomingClasses(classes);
-        const dueAssignments = getdueAssignments(assignments);
+        const dueAssignments = getDueAssignments(assignments, nextClasses);
         
         res.render('home', {
             classes: nextClasses,

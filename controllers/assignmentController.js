@@ -5,6 +5,11 @@ dotenv.config();
 export async function getAssignments(req, res) {
     try {
         const assignments = await read(process.env.ASSIGNMENTS_COLLECTION_ID);
+        assignments.sort((a, b) => {
+            const aCompleted = a['completed'] === 'true';
+            const bCompleted = b['completed'] === 'true';
+            return aCompleted - bCompleted;
+        })
     
         res.render('assignments', {
             assignments

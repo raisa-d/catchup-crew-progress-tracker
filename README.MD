@@ -41,14 +41,14 @@ Appwrite, Node, Express, Materialize, EJS, Vite
 - I woke up today and immediately thought of the solution. Instead of my previous method, I am finding the first assignment that is not completed and is not and then displaying all homework due that same class.
 
 Next Steps:
-- Update getDueAssignments() in homeControllers.js to use the order property of the next class to get the assignments due for that class.
-  - I am going to add an "order" property to each class and all the assignments due at that class. Any classes with a 0 have no homework due. It will make it easier to compare numbers to decide which assignments are upcoming, rollover and set it.
-- Authentication
-- Sort classes & assignments on Classes/Assignments page so that the classes you have watched/assignments you've completed go to the bottom of the list and next one you need to watch shows up on top.
-- Styling
-- Host it live
-- Work on optimizing features
+- Update getDueAssignments() in homeControllers.js to use the order property of the next class to get the assignments due for that class. ✅
+  - I am going to add an "order" property to each class and all the assignments due at that class. Any classes with a 0 have no homework due. It will make it easier to compare numbers to decide which assignments are upcoming, rollover and set it. ✅
+  - Sort assignments so that completed ones are on the bottom ✅
+- Styling ❌
+- Host it live ❌
+- Work on optimizing features ❌
   - Rollover assignments section on homepage
+  - Authentication - spent like 2 hours on this and got nowhere, ended up going in circles lol ❌
 
 ## Optimizations
 - Networking page to track your coffee chats.

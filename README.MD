@@ -18,12 +18,12 @@ This web app is inspired by an excel spreadsheet I use to track all of my person
 - Mark when you completed each #100Devs class/which one you are on ✅
 - Mark whether homework is completed or not ✅
 - Homeage shows upcoming homework and classes ✅
-- Section for rollover homework on homepage
-- Email/OAuth login
-- Edit the homework names if you want to describe it in different wording/provide a new link if it is broken
 - Assignment page to see all assignments and if they're completed ✅
 - Classes page to see all classes and when/if they were completed ✅
-- "X classes to go" on Homepage
+- "X classes to go" on Homepage ✅
+- Email/OAuth login
+- Section for rollover homework on homepage
+- Edit the homework names if you want to describe it in different wording/provide a new link if it is broken
 
 ## Technologies Used
 Appwrite, Node, Express, Materialize, EJS, Vite
@@ -40,17 +40,21 @@ Appwrite, Node, Express, Materialize, EJS, Vite
 - ***It was pretty easy to get the next classes on the homepage, but I am struggling with filtering the assignments by a string due date to get only the assignments due for the upcoming class. I may need to input all of the assignments with the exact same class names they have in the classes database. Continuing working on this when I get back to it.
 - I woke up today and immediately thought of the solution. Instead of my previous method, I am finding the first assignment that is not completed and is not and then displaying all homework due that same class.
 
-- The next thing I want to work on is rollover assignments. 
-- I am going to add a number to each class and all the assignments due at that class. Any classes with a 0 have no homework due. It will make it easier to compare numbers to decide which assignments are upcoming, rollover and set it.
-- Update getDueAssignments() in homeControllers.js to use the order property of the next class to get the assignments due.
-- Try to sort classes & assignments on Classes/Assignments page so that the classes you have watched/assignments you've completed go to the bottom of the list and next one you need to watch shows up on top.
+Next Steps:
+- Update getDueAssignments() in homeControllers.js to use the order property of the next class to get the assignments due for that class.
+  - I am going to add an "order" property to each class and all the assignments due at that class. Any classes with a 0 have no homework due. It will make it easier to compare numbers to decide which assignments are upcoming, rollover and set it.
+- Authentication
+- Sort classes & assignments on Classes/Assignments page so that the classes you have watched/assignments you've completed go to the bottom of the list and next one you need to watch shows up on top.
+- Styling
+- Host it live
+- Work on optimizing features
+  - Rollover assignments section on homepage
 
 ## Optimizations
-- Networking page to track your coffee chats
+- Networking page to track your coffee chats.
 - Resources tab for resources you want to add when you hear about them in class or in general. Preloaded with resources from CommunityTaught or that I have compiled.
-- Add back the authentication
-- Sort assignments by class. Once class has happened on a date, change due date from class number to the date of the class.
-- Scheduling feature so you can plan when you'll do each class
+- Once class has been assigned a date, change due date from class number to the date of the class.
+- Scheduling feature so you can plan when you'll do each class.
 
 ## Lessons Learned
 - This is my first app I'm building using Appwrite

@@ -33,7 +33,7 @@ function getdueAssignments(assignments) {
     return dueAssignments
 };
 
-async function getIndex(req, res) {
+async function getHome(req, res) {
     try {
         const assignments = await read(process.env.ASSIGNMENTS_COLLECTION_ID);
         const classes = await readClasses(process.env.CLASSES_COLLECTION_ID);
@@ -42,7 +42,7 @@ async function getIndex(req, res) {
         const nextClasses = getUpcomingClasses(classes);
         const dueAssignments = getdueAssignments(assignments);
         
-        res.render('index', {
+        res.render('home', {
             classes: nextClasses,
              assignments: dueAssignments,
              classesLeft: classesLeft
@@ -53,4 +53,4 @@ async function getIndex(req, res) {
     };
 }
 
-export { getIndex };
+export { getHome };

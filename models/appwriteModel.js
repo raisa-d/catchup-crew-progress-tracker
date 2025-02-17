@@ -1,9 +1,20 @@
 import dotenv from 'dotenv';
-import { databases } from '../server.js';
-import { Query } from 'appwrite';
+import { Query, Client, Databases } from 'appwrite';
 
 dotenv.config();
 
+/* ===============
+CONNECT TO APPWRITE
+=============== */
+const client = new Client()
+    .setEndpoint('https://cloud.appwrite.io/v1') 
+    .setProject(process.env.PROJECT_ID);
+
+const databases = new Databases(client);
+
+/* ===============
+DATABASE FUNCTIONS
+=============== */
 // READ ITEMS FROM COLLECTION
 export async function read(collection_id) {
     try {

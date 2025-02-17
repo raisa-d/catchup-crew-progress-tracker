@@ -61,16 +61,16 @@ Next Steps:
 - This is my first app I'm building using Appwrite
 - Had to go through the Appwrite Docs for about an hour to figure out how to start with a login page and get it to work
 - Trying to figure out context, I've never used this before with React
+- I learned about Server-Side Rendering vs. Client-Side Rendering. Looking at the Appwrite docs, I got a bit confused and sort of attempted to do both at the same time. I had to clarify this and make sure I was using the right SDKs.
 
 ## Resources
-- Used a Vite template to set up React with `npm create vite`. Currently, two official plugins are available:
-    - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-    - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Used a Vite template to set up React with `npm create vite`.
+- The [Appwrite Docs](https://appwrite.io/docs) were instrumental
 
 ## Contact
 <p> 
   <a href="https://raisadorzback.netlify.app/" target="blank">
-    <img src="https://img.shields.io/badge/Ibsite-563d7c?&style=for-the-badge" alt="Website">
+    <img src="https://img.shields.io/badge/Website-563d7c?&style=for-the-badge" alt="Website">
   </a>
   <a href="https://www.linkedin.com/in/raisa-d/">
     <img src="https://img.shields.io/badge/LinkedIn-046E6D?logo=linkedin&style=for-the-badge" alt="LinkedIn">

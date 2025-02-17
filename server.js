@@ -7,7 +7,7 @@ import homeRouter from './routes/homeRoutes.js';
 import updateRouter from './routes/updateRoutes.js';
 import assignmentRouter from './routes/assignmentRoutes.js';
 import classRouter from './routes/classRoutes.js';
-import loginRouter from './routes/loginRoutes.js';
+// import loginRouter from './routes/loginRoutes.js';
 
 // Load environment variables
 dotenv.config();
@@ -30,8 +30,8 @@ app.use(express.urlencoded({ extended: true }));
 /* =======
 ROUTERS
 ======= */
-app.use('/', loginRouter);
-app.use('/home', homeRouter);
+// app.use('/', loginRouter);
+app.use('/', homeRouter);
 app.use('/update', updateRouter);
 app.use('/assignments', assignmentRouter);
 app.use('/classes', classRouter);

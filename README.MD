@@ -44,11 +44,12 @@ Next Steps:
 - Update getDueAssignments() in homeControllers.js to use the order property of the next class to get the assignments due for that class. ✅
   - I am going to add an "order" property to each class and all the assignments due at that class. Any classes with a 0 have no homework due. It will make it easier to compare numbers to decide which assignments are upcoming, rollover and set it. ✅
   - Sort assignments so that completed ones are on the bottom ✅
-- Styling ❌
+- Update getUpcomingClasses() in homeControllers to get the classes a different way, it doesn't always work.
 - Host it live ❌
-- Work on optimizing features ❌
+- Improve Styling ❌
+- Optimizing features ❌
   - Rollover assignments section on homepage
-  - Authentication - spent like 2 hours on this and got nowhere, ended up going in circles lol ❌
+  - Authentication - spent like 2 hours on this and got nowhere, ended up going in circles lol
 
 ## Optimizations
 - Networking page to track your coffee chats.

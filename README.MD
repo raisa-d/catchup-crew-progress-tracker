@@ -55,7 +55,7 @@ Next priorities:
   - Rollover assignments section on homepage
   - Authentication - spent like 2 hours on this and got nowhere, ended up going in circles lol
   - Improve Styling ❌
-  - Let users edit assignment names
+  - Let users edit assignment names ❌
 
 ## Optimizations
 - Networking page to track your coffee chats.

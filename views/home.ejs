@@ -17,14 +17,30 @@
       <div class="nav-wrapper indigo lighten-1">
         <ul id="nav-mobile" class="flex-row">
           <li class="active"><a href="/">Home</a></li>
-          <li><a href="/assignments">Assignments</a></li>
-          <li><a href="/classes">Classes</a></li>
+          <li style="list-style-type: circle;"><a href="/assignments">Assignments</a></li>
+          <li style="list-style-type: circle;"><a href="/classes">Classes</a></li>
         </ul>
       </div>
     </nav>
     </header>
     <div class="container">
       <section>
+        <section class="center-align">
+          <h2 style="font-size: 20px;">Welcome #100Devs Catchup Crew! It can be hard to stay organized and get an overview of your progress & timeline through the program. This tool is to help you stay on top of everything!</h2>
+          <section style="font-size: 16px;">
+            <p>Get an overview of the upcoming classes and assignments on the Homepage. Update & look at when you watched each class in <a href="/classes">Classes</a>. See all of the assignments in the course in the <a href="/assignments">Assignments</a> tab.</p>
+          </section>
+        </section>
+        <p style="font-weight:bold;">What you can look forward to in future versions:</p>
+        <ul style="margin-left: 10px;">
+          <li style="list-style-type: circle;">User authentication (Email & OAuth)</li>
+          <li style="list-style-type: circle;">Rollover homework section on the Home page</li>
+          <li style="list-style-type: circle;">Column to write your personal notes next to classes/assignments</li>
+          <li style="list-style-type: circle;">Edit assignment names</li>
+          <li style="list-style-type: circle;">Scheduling feature so you can plan when you'll watch each class</li>
+          <li style="list-style-type: circle;">Networking page to track your coffee chats</li>
+          <li style="list-style-type: circle;">Resources tab (preloaded with #100Devs resources) that users can add to</li>
+        </ul>
         <h2 class="flow-text center-align">Assignments Due</h2>
         <table class="striped centered">
           <thead>
@@ -83,6 +99,22 @@
         </table>
       </section>
     </div>
+    <footer class="container center-align">
+      <div style="margin: 20px 0 10px 0;">
+        <a href="https://github.com/raisa-d" target="_blank" style="margin: 0 5px;">
+          <i class="fa-brands fa-github fa-2xl"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/raisa-d" target="_blank" style="margin: 0 5px;">
+          <i class="fa-brands fa-linkedin fa-2xl"></i>
+        </a>
+        <a href="https://bsky.app/profile/rai-bread.bsky.social" target="_blank" style="margin: 0 5px;">
+          <i class="fa-brands fa-bluesky fa-2xl"></i>
+        </a>
+      </div>
+      <p>&copy; <a href="https://raisadorzback.netlify.app/" target="_blank">
+        Rai Dorzback
+      </a></p>
+    </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script type="module" src="/main.js"></script>
   </body>

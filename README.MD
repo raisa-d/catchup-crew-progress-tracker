@@ -47,13 +47,14 @@ Next Steps:
   - Sort assignments so that completed ones are on the bottom ✅
 
 Next priorities:
-- Update getUpcomingClasses() in homeControllers to get the classes a different way, it doesn't always work. ❌
-- Host it live ❌
-- Add notes to each homework assignment to stay organized
-- Improve Styling ❌
+- Host it live ✅ - hosted on Render
+  - As I was adding more assignments to the database, ran into an issue. Needed to read two pages for listing the documents for assignments too.
+- Test this. Update getUpcomingClasses() in homeControllers to get the classes a different way, it doesn't always work. ❌
 - Optimizing features ❌
+  - Add notes to each homework assignment to stay organized ❌
   - Rollover assignments section on homepage
   - Authentication - spent like 2 hours on this and got nowhere, ended up going in circles lol
+  - Improve Styling ❌
   - Let users edit assignment names
 
 ## Optimizations

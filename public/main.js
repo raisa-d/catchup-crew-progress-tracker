@@ -17,7 +17,7 @@ async function toggleCompleted(e) {
     const newStatus = !currentCompletedStatus;
 
     try {
-        let response = await fetch('http://localhost:3000/update/completed', {
+        let response = await fetch('https://catchup-crew-progress-tracker.onrender.com/update/completed', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json'},
             body: JSON.stringify({

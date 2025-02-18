@@ -35,7 +35,7 @@ export async function read(collection_id) {
       process.env.DATABASE_ID,
       collection_id,
       [
-        Query.limit(200),
+        Query.limit(100),
         Query.cursorAfter(lastId)
       ]
     );

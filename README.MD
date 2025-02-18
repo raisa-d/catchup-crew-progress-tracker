@@ -17,10 +17,12 @@ This web app is inspired by an excel spreadsheet I use to track all of my person
 - Stores all of the homework, due date, and assignment and shows it to you based on what class you are at ✅
 - Mark when you completed each #100Devs class/which one you are on ✅
 - Mark whether homework is completed or not ✅
-- Homeage shows upcoming homework and classes ✅
+- Homepage shows upcoming homework and classes ✅
 - Assignment page to see all assignments and if they're completed ✅
 - Classes page to see all classes and when/if they were completed ✅
 - "X classes to go" on Homepage ✅
+
+Future Features:
 - Add notes to each homework assignment to stay organized
 - Email/OAuth login
 - Section for rollover homework on homepage
@@ -48,14 +50,14 @@ Next Steps:
 
 Next priorities:
 - Host it live ✅ - hosted on Render
-  - As I was adding more assignments to the database, ran into an issue. Needed to read two pages for listing the documents for assignments too.
-- Test this. Update getUpcomingClasses() in homeControllers to get the classes a different way, it doesn't always work. ❌
-- Optimizing features ❌
-  - Add notes to each homework assignment to stay organized ❌
+  - As I was adding more assignments to the database, ran into an issue. Needed to read two pages for listing the documents for assignments too. ✅
+- Test this. Update getUpcomingClasses() in homeControllers to get the classes a different way, it doesn't always work.
+- Optimizing features
+  - Add notes to each homework assignment to stay organized
   - Rollover assignments section on homepage
   - Authentication - spent like 2 hours on this and got nowhere, ended up going in circles lol
-  - Improve Styling ❌
-  - Let users edit assignment names ❌
+  - Improve Styling
+  - Let users edit assignment names
 
 ## Optimizations
 - Networking page to track your coffee chats.

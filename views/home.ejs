@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="/src/favicon.png">
     <link rel="stylesheet" href="/style.css">
     <!-- materialize -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
@@ -11,8 +12,8 @@
     <title>100Devs Catchup Crew Progress Tracker</title>
   </head>
   <body>
-    <header>
-      <h1 class="flow-text center-align">100Devs Catchup Crew Progress Tracker</h1>
+    <header class="center-align">
+      <img src="/src/logo.png" alt="100Devs Catchup Crew Progress Tracker" style="margin: 10px 0;" width="420">
     <nav>
       <div class="nav-wrapper indigo lighten-1">
         <ul id="nav-mobile" class="flex-row">
@@ -26,11 +27,15 @@
     <div class="container">
       <section>
         <section class="center-align">
-          <h2 style="font-size: 20px;">Welcome #100Devs Catchup Crew! It can be hard to stay organized and get an overview of your progress & timeline through the program. This tool is to help you stay on top of everything!</h2>
+          <h2 style="font-size: 20px;">Welcome #100Devs Catchup Crew! This tool helps you keep track of upcoming classes, assignments, and your progress so you can stay on top of your game.</h2>
           <section style="font-size: 16px;">
-            <p>Get an overview of the upcoming classes and assignments on the Homepage. Update & look at when you watched each class in <a href="/classes">Classes</a>. See all of the assignments in the course in the <a href="/assignments">Assignments</a> tab.</p>
-          </section>
         </section>
+            <ul class="left-align">
+              <li style="list-style-type: circle;"><a href="/" style="font-weight:bold;">Homepage:</a Get a snapshot of upcoming classes and assignments.</li>
+              <li style="list-style-type: circle;"><a href="/classes" style="font-weight:bold;">Classes:</a> Easily track when you’ve watched each class.</li>
+              <li style="list-style-type: circle;"><a href="/assignments" style="font-weight:bold;">Assignments:</a> Stay up-to-date with all the course assignments.</li>
+            </ul>
+          </section>
         <h2 class="flow-text center-align">Assignments Due</h2>
         <table class="striped centered">
           <thead>

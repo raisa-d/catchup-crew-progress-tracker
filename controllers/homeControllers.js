@@ -1,4 +1,4 @@
-import { read, readClasses } from '../models/appwriteModel.js';
+import { read } from '../models/appwriteModel.js';
 import dotenv from 'dotenv';
 dotenv.config();
 
@@ -47,7 +47,7 @@ function getDueAssignments(assignments, nextClasses) {
 async function getHome(req, res) {
     try {
         const assignments = await read(process.env.ASSIGNMENTS_COLLECTION_ID);
-        const classes = await readClasses(process.env.CLASSES_COLLECTION_ID);
+        const classes = await read(process.env.CLASSES_COLLECTION_ID);
 
         const classesLeft = classes.filter(c => c['date-watched'] === null).length;
         const nextClasses = getUpcomingClasses(classes);

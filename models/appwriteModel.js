@@ -17,25 +17,13 @@ DATABASE FUNCTIONS
 =============== */
 // READ ITEMS FROM COLLECTION
 export async function read(collection_id) {
-    try {
-      let response = await databases.listDocuments(
-        process.env.DATABASE_ID,
-        collection_id
-      );
-      return response.documents;
-    } catch(err) {
-      console.error(err);
-    };
-};
-
-export async function readClasses(collection_id) {
   try {
     // page1
     let page1 = await databases.listDocuments(
       process.env.DATABASE_ID,
       collection_id,
       [
-        Query.limit(35),
+        Query.limit(100),
         Query.offset(0)
       ]
     );
@@ -47,7 +35,7 @@ export async function readClasses(collection_id) {
       process.env.DATABASE_ID,
       collection_id,
       [
-        Query.limit(35),
+        Query.limit(200),
         Query.cursorAfter(lastId)
       ]
     );

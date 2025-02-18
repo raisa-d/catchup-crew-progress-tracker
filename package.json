@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "start": "node --watch server.js"
+    "start": "node server.js"
   },
   "devDependencies": {
     "vite": "^6.1.0"
